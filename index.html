@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>SHARE YOUR THOUGHTS. SHARE YOUR VOICE.</title>
+  </head>
+  <body>
+    <header>
+      <h1>SHARE YOUR THOUGHTS. SHARE YOUR VOICE.</h1>
+    </header>
+    <main>
+      <p style="font-size: 20px; line-height: 1.3">
+        Welcome to our platform where you can share your thoughts and voice with
+        the world. <br />
+        Express yourself and connect with others!
+      </p>
+
+      <button onclick="startRecording()">
+        <span id="recordIcon">&#127897;</span>
+      </button>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 MaryPreciousNavares. All rights reserved.</p>
+    </footer>
+
+    <script>
+        var SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition;
+        var voiceRecognition = new SpeechRecognition();
+        
+        // Set language to English (United States)
+        voiceRecognition.lang = 'en-US';
+        
+        // Disable interim results
+        voiceRecognition.interimResults = false;
+        
+        // Set the maximum number of alternative transcripts to 5
+        voiceRecognition.maxAlternatives = 5;
+        
+        function startRecording() {
+          try {
+            // Start speech recognition
+            voiceRecognition.start();
+            
+            // Hide the alert message after clicking the button
+            document.getElementById('alertMessage').style.display = 'none';
+            
+          } catch (error) {
+            console.error('Error starting speech recognition:', error);
+          }
+        }
+  
+        // Event handler for speech recognition results
+        voiceRecognition.onresult = function(event) {
+          console.log('You said:', event.results[0][0].transcript);
+          // Add code to send the recorded voice message to a certain email
+        };
+      </script>
+
+  </body>
+</html>
