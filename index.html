@@ -75,6 +75,7 @@
       function sendEmail(message) {
         // Replace these values with your own
         //var serviceID = "service_z2yapm2";
+        //var templateID = "template_ah15atr";
         var userID = "BbxCMumWrPBLrRX55hYoSabL";
 
         // Prepare email parameters
@@ -84,7 +85,7 @@
         };
 
         // Send the email
-        emailjs.send(serviceID, templateParams, userID).then(
+        emailjs.send(serviceID, templateID, templateParams, userID).then(
           function (response) {
             console.log("Email sent successfully", response);
             document.getElementById("successMessage").style.display = "block";
