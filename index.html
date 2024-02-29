@@ -41,7 +41,7 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
       // Initialize EmailJS with your user ID
-      emailjs.init("prj_r9odBBCejwxVPAHrKi85oLcLo231");
+      emailjs.init("BbxCMumWrPBLrRX55hYoSabL");
 
       var SpeechRecognition =
         window.SpeechRecognition ||
@@ -75,8 +75,7 @@
       function sendEmail(message) {
         // Replace these values with your own
         //var serviceID = "service_z2yapm2";
-        //var templateID = "template_ah15atr";
-        var userID = "prj_r9odBBCejwxVPAHrKi85oLcLo231";
+        var userID = "BbxCMumWrPBLrRX55hYoSabL";
 
         // Prepare email parameters
         var templateParams = {
@@ -85,7 +84,7 @@
         };
 
         // Send the email
-        emailjs.send(serviceID, templateID, templateParams, userID).then(
+        emailjs.send(serviceID, templateParams, userID).then(
           function (response) {
             console.log("Email sent successfully", response);
             document.getElementById("successMessage").style.display = "block";
