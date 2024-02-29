@@ -17,9 +17,9 @@
         Express yourself and connect with others!
       </p>
 
-      <button onclick="startRecording()">
-        <span id="recordIcon">&#127897;</span>
-      </button>
+        <button id="recordIcon">&#127897;</button>
+        <h2 id="recordedText"></h2>
+      <h2 id="successMessage" style="display: none;">EMAIL SENT SUCCESSFULLY</h2>
     </main>
 
     <footer>
@@ -41,7 +41,7 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
       // Initialize EmailJS with your user ID
-      emailjs.init("u0cLAi5JQo4hKs_qS");
+      emailjs.init("5iC3bWPpEia59wIXS4zS07AC");
 
       var SpeechRecognition =
         window.SpeechRecognition ||
@@ -76,7 +76,7 @@
         // Replace these values with your own
         //var serviceID = "service_z2yapm2";
         //var templateID = "template_ah15atr";
-        //var userID = "u0cLAi5JQo4hKs_qS";
+        var userID = "5iC3bWPpEia59wIXS4zS07AC";
 
         // Prepare email parameters
         var templateParams = {
